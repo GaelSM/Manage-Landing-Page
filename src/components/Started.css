@@ -1,0 +1,36 @@
+.started{
+    height: 219px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 170px;
+    background: url("../assets/bg-simplify-section-desktop.svg") no-repeat, hsla(12, 88%, 59%);
+    background-position: left 280px top 100%;
+    background-size: cover;
+
+    & h2{
+        width: 490px;
+        color: hsl(0, 0%, 98%);
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1000px){
+ .started{
+    background-size: cover;
+    background-position: left -450px top 0px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 100px 15px;
+    gap: 1.5rem;
+
+    & h2{
+        width: auto;
+        text-align: center;
+        padding: 0;
+    }
+ }   
+}

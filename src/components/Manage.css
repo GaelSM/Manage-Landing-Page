@@ -1,0 +1,118 @@
+.manage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & .left {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-right: 4rem;
+
+        & h2 {
+            color: hsl(228, 39%, 23%);
+            font-size: 2.5rem;
+        }
+
+        & p {
+            color: hsl(227, 12%, 61%);
+            line-height: 1.7;
+            padding-right: 7rem;
+        }
+    }
+
+    & .right {
+        & ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            & li {
+                display: grid;
+                grid-template-areas:
+                    "list title"
+                    "list text"
+                ;
+                gap: 1.5rem;
+
+                & .list {
+                    border-radius: 2rem;
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 68px;
+                    height: 38px;
+                    background-color: hsl(12, 88%, 59%);
+                    color: hsl(12, 100%, 96%);
+                    grid-area: list;
+                }
+
+                & h3 {
+                    padding-top: .5rem;
+                    color: hsl(228, 39%, 23%);
+                    font-size: 1rem;
+                    grid-area: title;
+                }
+
+                & p {
+                    color: hsl(227, 12%, 61%);
+                    line-height: 1.7;
+                    grid-area: text;
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .manage{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        & .left{
+            text-align: center;
+            padding: 0;
+
+            & h2{
+                font-size: 2rem;
+            }
+
+            & p{
+                padding: 0;
+            }
+        }
+
+        & .right{
+            & ul{
+                & li{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+
+                    & h3{
+                        left: 8%;
+                        width: 100%;
+                        padding-left: 3rem;
+                        line-height: 1.5;
+                        font-size: .9rem;
+                        height: 2.4rem;
+                        z-index: -1;
+                        background-color: hsl(12, 100%, 96%);
+                        position: absolute;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 500px){
+    h3{
+        font-size: 1.5rem;
+        border-radius: 2rem;
+    }
+}

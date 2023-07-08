@@ -1,0 +1,212 @@
+footer{
+    padding: 60px 170px;
+    width: 100vw;
+    height: 250px;
+    background-color: hsl(233, 12%, 13%);
+    display: grid;
+    grid-template-areas:
+    "social first second form" 
+    "social first second copy"
+    ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr auto;
+    color: hsl(0, 0%, 98%);
+
+    & ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & li{
+            cursor: pointer;
+            transition: color .3s ease;
+
+            &:hover{
+                color: hsl(12, 88%, 59%);
+            }
+        }
+    }
+
+    & article{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2rem;
+        justify-content: space-between;
+
+        & p{
+            color: hsl(227, 12%, 61%);
+            font-size: .8rem;
+            align-self: flex-end;
+        }
+    }
+
+    & .social{
+        grid-area: social;
+        & img{
+            width: 145px;
+            height: auto;
+        }
+
+        & div{
+            width: 145px;
+            display: flex;
+            justify-content: space-between;
+
+            & i{
+                cursor: pointer;
+                transition: color .3s ease;
+                
+                &:hover{
+                    color: hsl(12, 88%, 59%);
+                }
+            }
+        }
+    }
+
+    & .first-ul{
+        grid-area: first;
+    }
+
+    & .second-ul{
+        grid-area: second;
+    }
+
+    & .copy{
+        grid-area: copy;
+    }
+
+    & form{
+        grid-area: form;
+        position: relative;
+        display: flex;
+        gap: .5rem;
+
+        & input{
+            width: 200px;
+            height: 45px;
+            background-color: hsl(0, 0%, 98%);
+            border-radius: 2rem;
+            padding: 0 1rem;
+        }
+
+        & button{
+            width: 70px;
+            height: 45px;
+            background-color: hsl(12, 88%, 59%);
+            color: hsl(12, 100%, 96%);
+            border-radius: 2rem;
+            font-weight: 700;
+            transition: opacity .3s ease;
+            cursor: pointer;
+
+            &:hover{
+                opacity: .5;
+            }
+        }
+
+        & p{
+            color: hsl(12, 88%, 59%);
+            position: absolute;
+            left: -3rem;
+            top: 3.3rem;
+            font-size: .7rem;
+            font-style: italic;
+            opacity: 0;
+            transition: left .3s ease, opacity .3s ease;
+        }
+
+        &.error{
+
+            & input{
+                outline: 1px solid hsl(12, 88%, 59%);
+                color: hsl(12, 88%, 59%);
+            }
+
+            & p{
+                left: 1rem;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 900px){
+    footer{
+        padding: 3rem 1.5rem;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 3rem;
+        grid-template-areas: 
+        "form form"
+        "first second"
+        "social social"
+        "copy copy"
+        ;
+
+        & form{
+            justify-content: center;
+
+            & input{
+                width: 250px;
+            }
+        }
+
+        & .first-ul{
+            padding-left: 3rem;
+            grid-area: first;
+        }
+
+        & .second-ul{
+            padding-left: 2rem;
+            grid-area: second;
+        }
+
+        & .social{
+            grid-area: social;
+            gap: 3rem;
+            flex-direction: column-reverse;
+            align-items: center;
+            font-size: 2rem;
+
+            & div{
+                width: 90%;
+                justify-content: space-between;
+            }
+        }
+
+        & .copy{
+            grid-area: copy;
+            & p{
+                align-self: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+    footer{
+        justify-content: center;
+        & .first-ul{
+            padding: 0;
+            align-items: center;
+        }
+
+        & .second-ul{
+            padding: 0;
+            align-items: center;
+        }
+
+        & .social{
+            & div{
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1150px){
+    footer{
+        padding: 60px 20px;
+    }
+}
